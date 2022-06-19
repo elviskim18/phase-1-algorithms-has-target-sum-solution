@@ -1,5 +1,12 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const lookedNumbers = {};
+  for(const number of array){
+    const compliment = target - number;
+    if(compliment in lookedNumbers) return true;
+    lookedNumbers[number] = true;
+  }
+  return false
 }
 
 /* 
